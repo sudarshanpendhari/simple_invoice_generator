@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="900dp"
+        android:scaleType="centerCrop"
+
+        app:srcCompat="@drawable/top_background1" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="30dp"
+        android:text="Generate Invoice"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Customer Name"
+        android:inputType="textPersonName"
+
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextName"
+        android:layout_alignStart="@+id/editTextName"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Contact Number"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/additem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPhone"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
+        android:text="add item " />
+
+    <LinearLayout
+        android:id="@+id/LLitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/additem"
+        android:layout_alignStart="@+id/editTextPhone"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="-1dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/LLiitem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignStart="@+id/editTextPhone"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="-1dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="211dp"
+                android:layout_height="52dp"
+                android:layout_below="@+id/additem"
+                android:layout_alignStart="@+id/editTextPhone"
+                android:layout_alignEnd="@+id/editTextPhone"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="-1dp"
+                android:background="@drawable/border"
+                android:text="No items" />
+
+            <EditText
+                android:id="@+id/editTextQty"
+                android:layout_width="111dp"
+                android:layout_height="52dp"
+                android:layout_alignTop="@+id/spinner"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/spinner"
+                android:ems="10"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:text="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/saveitemtolist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LLitem"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:text="Save " />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/textScroll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/LLitem">
+
+        <TextView
+
+            android:id="@+id/textitems"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="0dp"
+            android:text="Items added=\n      item     qty     rate   amount\n"
+            android:textSize="20sp" />
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSaveAndPrint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textScroll"
+        android:layout_alignStart="@+id/LLitem"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:text="Generate PDF" />
+
+
+
+
+
+
+</RelativeLayout>
